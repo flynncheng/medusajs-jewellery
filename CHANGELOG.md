@@ -1,3 +1,10 @@
+# 1.0.0 (2024-07-25)
+
+
+### Features
+
+* add tmux script ([b397c2c](https://github.com/flynncheng/medusajs-jewellery/commit/b397c2cdddb19cceb8758be5b39fa8e20b2087ad))
+
 # [3.54.0](https://github.com/ixartz/Next-js-Boilerplate/compare/v3.53.0...v3.54.0) (2024-07-23)
 
 
