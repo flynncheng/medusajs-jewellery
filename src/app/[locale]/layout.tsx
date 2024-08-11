@@ -1,32 +1,37 @@
-import '@/styles/global.css';
+import "@/styles/global.css";
 
-import type { Metadata } from 'next';
-import { NextIntlClientProvider, useMessages } from 'next-intl';
-import { unstable_setRequestLocale } from 'next-intl/server';
+import type { Metadata } from "next";
+import { Josefin_Sans } from "next/font/google";
+import { NextIntlClientProvider, useMessages } from "next-intl";
+import { unstable_setRequestLocale } from "next-intl/server";
 
-import { AppConfig } from '@/utils/AppConfig';
+import { AppConfig } from "@/utils/AppConfig";
+
+const josefinSans = Josefin_Sans({
+  subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
   icons: [
     {
-      rel: 'apple-touch-icon',
-      url: '/apple-touch-icon.png',
+      rel: "apple-touch-icon",
+      url: "/apple-touch-icon.png",
     },
     {
-      rel: 'icon',
-      type: 'image/png',
-      sizes: '32x32',
-      url: '/favicon-32x32.png',
+      rel: "icon",
+      type: "image/png",
+      sizes: "32x32",
+      url: "/favicon-32x32.png",
     },
     {
-      rel: 'icon',
-      type: 'image/png',
-      sizes: '16x16',
-      url: '/favicon-16x16.png',
+      rel: "icon",
+      type: "image/png",
+      sizes: "16x16",
+      url: "/favicon-16x16.png",
     },
     {
-      rel: 'icon',
-      url: '/favicon.ico',
+      rel: "icon",
+      url: "/favicon.ico",
     },
   ],
 };
@@ -46,7 +51,7 @@ export default function RootLayout(props: {
 
   return (
     <html lang={props.params.locale}>
-      <body>
+      <body className={josefinSans.className}>
         <NextIntlClientProvider
           locale={props.params.locale}
           messages={messages}
