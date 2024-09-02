@@ -1,5 +1,5 @@
-import { ShoppingBag } from "lucide-react";
-import React from "react";
+import { ShoppingBag } from 'lucide-react';
+import React from 'react';
 
 export default function Cart() {
   return (

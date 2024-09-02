@@ -1,11 +1,11 @@
-"use client";
+'use client';
 
-import Account from "./Account";
-import Cart from "./Cart";
-import Header from "./Header";
-import Logo from "./Logo";
-import Menu from "./Menu";
-import Search from "./Search";
+import Account from './Account';
+import Cart from './Cart';
+import Header from './Header';
+import Logo from './Logo';
+import Menu from './Menu';
+import Search from './Search';
 
 export default function Nav() {
   return (

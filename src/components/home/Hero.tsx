@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from 'next/image';
 
 const Hero = () => {
   return (
@@ -14,7 +14,7 @@ const Hero = () => {
             alt="Picture of the hero"
             width={2400}
             height={2400}
-            style={{ width: "100%" }}
+            style={{ width: '100%' }}
             priority
           />
         </picture>

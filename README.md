@@ -103,6 +103,7 @@ Developer experience first, extremely flexible code structure and only keep what
 - 🔒 Authentication with [Clerk](https://clerk.com?utm_source=github&utm_medium=sponsorship&utm_campaign=nextjs-boilerplate): Sign up, Sign in, Sign out, Forgot password, Reset password, and more.
 - 👤 Passwordless Authentication with Magic Links, Multi-Factor Auth (MFA), Social Auth (Google, Facebook, Twitter, GitHub, Apple, and more), Passwordless login with Passkeys, User Impersonation
 - 📦 Type-safe ORM with DrizzleORM, compatible with PostgreSQL, SQLite, and MySQL
+- 💽 Offline and local development database with PGlite
 - 🌐 Multi-language (i18n) with [next-intl](https://next-intl-docs.vercel.app/) and [Crowdin](https://l.crowdin.com/next-js)
 - ♻️ Type-safe environment variables with T3 Env
 - ⌨️ Form handling with React Hook Form
@@ -262,6 +263,8 @@ The project uses Playwright for Integration and E2E testing. You can run the tes
 npx playwright install # Only for the first time in a new environment
 npm run test:e2e
 ```
+
+In the local environment, visual testing is disabled. The terminal will display the message `[percy] Percy is not running, disabling snapshots.`. By default, the visual testing only runs in GitHub Actions.
 
 ### Enable Edge runtime (optional)
 

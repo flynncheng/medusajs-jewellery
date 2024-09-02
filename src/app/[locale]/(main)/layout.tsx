@@ -1,9 +1,9 @@
-import type { Metadata } from "next";
+import type { Metadata } from 'next';
 
-import Footer from "@/components/layout/footer";
-import Nav from "@/components/layout/nav";
+import Footer from '@/components/layout/footer';
+import Nav from '@/components/layout/nav';
 
-const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://localhost:8000";
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://localhost:8000';
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),

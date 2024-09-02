@@ -1,8 +1,5 @@
 import { expect, test } from '@playwright/test';
 
-// Don't use the default user agent to avoid the requests to be blocked by Clerk middleware.
-test.use({ userAgent: '' });
-
 test.describe('Guestbook', () => {
   test.describe('Basic CRUD operations', () => {
     test('should create a new entry in the guestbook and delete it', async ({
@@ -24,6 +21,7 @@ test.describe('Guestbook', () => {
           id: createJson.id,
         },
       });
+
       expect(del.status()).toBe(200);
     });
   });

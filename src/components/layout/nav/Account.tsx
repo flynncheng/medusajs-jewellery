@@ -1,5 +1,5 @@
-import { UserRound } from "lucide-react";
-import React from "react";
+import { UserRound } from 'lucide-react';
+import React from 'react';
 
 export default function Account() {
   return (

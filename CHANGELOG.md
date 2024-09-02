@@ -1,3 +1,47 @@
+## [3.55.3](https://github.com/ixartz/Next-js-Boilerplate/compare/v3.55.2...v3.55.3) (2024-08-21)
+
+
+### Bug Fixes
+
+* update checkly configuration and use playwright baseURl in Checkly ([4a458f3](https://github.com/ixartz/Next-js-Boilerplate/commit/4a458f328f100f427007ec9bd5c7a02e45c55a12))
+
+## [3.55.2](https://github.com/ixartz/Next-js-Boilerplate/compare/v3.55.1...v3.55.2) (2024-08-20)
+
+
+### Bug Fixes
+
+* add crowdin synchronize in CI action ([9402e5e](https://github.com/ixartz/Next-js-Boilerplate/commit/9402e5ee4c3e2b8dcb42fe38425b5e93247347c3))
+* automatically sync translation with Crowdin for each PR ([d4ea7d5](https://github.com/ixartz/Next-js-Boilerplate/commit/d4ea7d5ed3e06f468c0cbd57a343c2925672fa1f))
+* automatically sync translation with Crowdin for each PR ([eeb4216](https://github.com/ixartz/Next-js-Boilerplate/commit/eeb421668bcd0dc3fe09c8e9dea8c194e02207e2))
+* checkout HEAD commit instead of the merge commit ([60bfd65](https://github.com/ixartz/Next-js-Boilerplate/commit/60bfd65d83e6e148c47703f4a94e11e1858d70c2))
+* git checkout history in crowdin pr sync action ([5a2fedf](https://github.com/ixartz/Next-js-Boilerplate/commit/5a2fedf951f11c5d4e911e1b9c94dd1018d78df6))
+* only run crowdin pr sync when CI workflow pass ([cc4a9a8](https://github.com/ixartz/Next-js-Boilerplate/commit/cc4a9a80c5c7ffa42bc0ad4a843f037f249ca423))
+* upgrade GitHub actions dependencies ([7b5edfe](https://github.com/ixartz/Next-js-Boilerplate/commit/7b5edfe8ad7fad28e66a8ce92d63d2dd3e9dfbbe))
+
+## [3.55.1](https://github.com/ixartz/Next-js-Boilerplate/compare/v3.55.0...v3.55.1) (2024-08-20)
+
+
+### Bug Fixes
+
+* resolve lint sort conflicts ([b9d3de1](https://github.com/ixartz/Next-js-Boilerplate/commit/b9d3de1212b6b77cd61277edce354c290fc3fd86))
+* resolve lint sort conflicts with simple-import-sort ([544c541](https://github.com/ixartz/Next-js-Boilerplate/commit/544c54197ee74930c01b0d28cfd250c6bc384080))
+
+# [3.55.0](https://github.com/ixartz/Next-js-Boilerplate/compare/v3.54.0...v3.55.0) (2024-08-19)
+
+
+### Features
+
+* remove target='blank' in badge ([b033c2e](https://github.com/ixartz/Next-js-Boilerplate/commit/b033c2e1f4ebdff7914ea81830e1c54b5b1a3d96))
+* use new ESLint flat config ([8f31536](https://github.com/ixartz/Next-js-Boilerplate/commit/8f31536f29ce6599fb9ccbfae8dc176080a9215d))
+
+
+### Reverts
+
+* add back lint-staged file configuration ([5c51a94](https://github.com/ixartz/Next-js-Boilerplate/commit/5c51a94147c325ec2a10ea1c7a8f2060397ec32b))
+* comment pre-commit script ([e9d6c7a](https://github.com/ixartz/Next-js-Boilerplate/commit/e9d6c7a34c1dad2b1fb706c300646f098b6437b1))
+* pre-commit script used by Husky ([21acf33](https://github.com/ixartz/Next-js-Boilerplate/commit/21acf33b96dab666587688ea1dfb08c7f5f1ddf4))
+* use default code from next-intl in global.d.ts ([0343b2f](https://github.com/ixartz/Next-js-Boilerplate/commit/0343b2f043480716866350b221a7e986759e6dc6))
+
 # [3.54.0](https://github.com/ixartz/Next-js-Boilerplate/compare/v3.53.0...v3.54.0) (2024-07-23)
 
 
