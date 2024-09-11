@@ -1,11 +1,13 @@
 import React from 'react';
 
 import Hero from '@/components/home/Hero';
+import MainCollections from '@/components/home/MainCollections';
 
 export default function Main() {
   return (
-    <main className="flex-auto space-y-12">
+    <main className="flex-auto space-y-16 lg:space-y-28">
       <Hero />
+      <MainCollections />
     </main>
   );
 }
