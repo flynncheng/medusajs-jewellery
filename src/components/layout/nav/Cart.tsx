@@ -10,7 +10,7 @@ export default function Cart() {
           className="shrink-0 text-gray-400 group-hover:text-gray-500"
           size={20}
         />
-        <span className="absolute -top-1.5 ml-3 block size-3.5 rounded-full bg-black/80 text-center text-xs font-medium text-white">
+        <span className="absolute -top-1.5 ml-3 block size-3.5 rounded-full bg-black/80 text-center text-xs text-white">
           0
         </span>
         <span className="sr-only">items in cart, view bag</span>

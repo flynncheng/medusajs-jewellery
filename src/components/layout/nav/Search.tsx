@@ -28,9 +28,7 @@ export default function SearchForm() {
     },
   });
 
-  function onSubmit(data: z.infer<typeof FormSchema>) {
-    console.log(data);
-  }
+  function onSubmit(_data: z.infer<typeof FormSchema>) { }
 
   return (
     <div className="w-full lg:ml-auto lg:w-1/3">
