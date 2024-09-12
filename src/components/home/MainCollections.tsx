@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { AspectRatio } from '@/components/ui/aspect-ratio';
+
 export default function MainCollections() {
   const products = [
     {
@@ -75,11 +77,13 @@ export default function MainCollections() {
         {products.map(product => (
           <a key={product.id} href={product.href} className="group">
             <div className="w-full overflow-hidden bg-gray-200">
-              <img
-                alt={product.imageAlt}
-                src={product.imageSrc}
-                className="size-full object-cover object-center group-hover:opacity-75"
-              />
+              <AspectRatio ratio={4 / 5}>
+                <img
+                  alt={product.imageAlt}
+                  src={product.imageSrc}
+                  className="size-full object-cover object-center group-hover:opacity-75"
+                />
+              </AspectRatio>
             </div>
             <h3 className="mt-4 text-center text-gray-700">{product.name}</h3>
           </a>

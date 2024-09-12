@@ -1,6 +1,8 @@
 import Image from 'next/image';
 import React from 'react';
 
+import { AspectRatio } from '@/components/ui/aspect-ratio';
+
 export default function FeaturedCollections() {
   const products = [
     {
@@ -77,7 +79,7 @@ export default function FeaturedCollections() {
           <h2 className="mb-6 mt-3 text-3xl tracking-tight">Iconic Handbags: The Side Trunk</h2>
           <span className="underline underline-offset-4">Explore the Selection</span>
         </a>
-        <picture className="sticky top-24 block max-h-[80vh] overflow-hidden lg:top-16">
+        <picture className="sticky top-24 block max-h-[85vh] overflow-hidden lg:top-16">
           <source
             srcSet="/assets/images/one-large.avif"
             media="(min-width: 1024px)"
@@ -96,11 +98,13 @@ export default function FeaturedCollections() {
             {products.map(product => (
               <a key={product.id} href={product.href} className="group">
                 <div className="w-full overflow-hidden bg-gray-200">
-                  <img
-                    alt={product.imageAlt}
-                    src={product.imageSrc}
-                    className="size-full object-cover object-center group-hover:opacity-75"
-                  />
+                  <AspectRatio ratio={4 / 5}>
+                    <img
+                      alt={product.imageAlt}
+                      src={product.imageSrc}
+                      className="size-full object-cover object-center group-hover:opacity-75"
+                    />
+                  </AspectRatio>
                 </div>
                 <h3 className="mt-4 text-sm text-gray-700">{product.name}</h3>
                 <p className="mt-1 font-light text-gray-700">{product.price}</p>
@@ -115,7 +119,7 @@ export default function FeaturedCollections() {
           <h2 className="mb-6 mt-3 text-3xl tracking-tight">New this Season</h2>
           <span className="underline underline-offset-4">Shop the Selection</span>
         </a>
-        <picture className="sticky top-24 block max-h-[80vh] overflow-hidden lg:top-16">
+        <picture className="sticky top-24 block max-h-[85vh] overflow-hidden lg:top-16">
           <source
             srcSet="/assets/images/two-large.avif"
             media="(min-width: 1024px)"
@@ -134,11 +138,13 @@ export default function FeaturedCollections() {
             {products.map(product => (
               <a key={product.id} href={product.href} className="group">
                 <div className="w-full overflow-hidden bg-gray-200">
-                  <img
-                    alt={product.imageAlt}
-                    src={product.imageSrc}
-                    className="size-full object-cover object-center group-hover:opacity-75"
-                  />
+                  <AspectRatio ratio={4 / 5}>
+                    <img
+                      alt={product.imageAlt}
+                      src={product.imageSrc}
+                      className="size-full object-cover object-center group-hover:opacity-75"
+                    />
+                  </AspectRatio>
                 </div>
                 <h3 className="mt-4 text-sm text-gray-700">{product.name}</h3>
                 <p className="mt-1 font-light text-gray-700">{product.price}</p>
