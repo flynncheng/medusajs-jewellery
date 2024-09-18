@@ -3,7 +3,7 @@ import Image from 'next/image';
 export default function Hero() {
   return (
     <section className="relative max-h-[80vh] overflow-hidden">
-      <a href="/home">
+      <a href="/collections/bag">
         <picture className="after:absolute after:inset-x-0 after:bottom-0 after:h-1/2 after:bg-gradient-to-t after:from-[rgba(0,0,0,0.5)] after:to-[rgba(0,0,0,0)]">
           <source
             srcSet="/assets/images/hero-large.webp"

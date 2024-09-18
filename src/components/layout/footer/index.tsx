@@ -99,7 +99,7 @@ export default function Footer() {
       <div className="mx-auto space-y-10 p-6 sm:space-y-16 lg:p-8 xl:px-[8vw]">
         <form className="">
           <div className="mx-auto grid w-full max-w-lg items-center gap-1.5">
-            <h3 className="text-xl">
+            <h3 className="text-lg">
               Be the first to know our exclusive sales events
             </h3>
             <div className="flex w-full items-center space-x-2">
@@ -109,7 +109,7 @@ export default function Footer() {
           </div>
         </form>
 
-        <Accordion type="single" collapsible className="w-full sm:hidden">
+        <Accordion type="single" collapsible className="w-full text-sm text-gray-700 sm:hidden">
           <AccordionItem value="item-1">
             <AccordionTrigger className="font-normal">Resources</AccordionTrigger>
             <AccordionContent>
@@ -137,7 +137,7 @@ export default function Footer() {
           </AccordionItem>
         </Accordion>
 
-        <div className="hidden flex-1 justify-between space-y-6 sm:flex sm:space-y-0">
+        <div className="hidden flex-1 justify-between space-y-6 text-sm text-gray-700 sm:flex sm:space-y-0">
           {
             footerNavs.map((item, idx) => (
               <ul
