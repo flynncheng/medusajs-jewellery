@@ -99,7 +99,7 @@ export default function Footer() {
       <div className="mx-auto space-y-10 p-6 sm:space-y-16 lg:p-8 xl:px-[8vw]">
         <form className="">
           <div className="mx-auto grid w-full max-w-lg items-center gap-1.5">
-            <h3 className="text-lg">
+            <h3>
               Be the first to know our exclusive sales events
             </h3>
             <div className="flex w-full items-center space-x-2">
