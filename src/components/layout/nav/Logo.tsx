@@ -3,7 +3,7 @@ import React from 'react';
 export default function Logo() {
   return (
     <div className="flex lg:order-first">
-      <a href="/">
+      <a href="/home">
         <span className="sr-only">Your Company</span>
         {/* <img alt="" src="/logo.jpg" className="h-12 w-auto" /> */}
         <svg

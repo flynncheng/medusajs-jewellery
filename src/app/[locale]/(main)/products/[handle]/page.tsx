@@ -233,7 +233,7 @@ export default function Product() {
                   <SheetHeader>
                     <SheetTitle>Colors</SheetTitle>
                   </SheetHeader>
-                  <div className="grid grid-cols-2 items-center gap-6 pt-6">
+                  <div className="grid grid-cols-2 items-center gap-6 py-10 lg:pr-8">
                     <Link href="?variant=black">
                       <AspectRatio ratio={1 / 1}>
                         <Image
@@ -280,7 +280,7 @@ export default function Product() {
                 <SheetHeader>
                   <SheetTitle>Product details</SheetTitle>
                 </SheetHeader>
-                <div className="py-10 lg:pb-16 lg:pr-8">
+                <div className="py-10 lg:pr-8">
                   {/* Description and details */}
                   <div>
                     <h3 className="sr-only">Description</h3>
@@ -321,7 +321,7 @@ export default function Product() {
                 <SheetHeader>
                   <SheetTitle>Delivery & Returns</SheetTitle>
                 </SheetHeader>
-                <div className="py-10 lg:pb-16 lg:pr-8">
+                <div className="py-10 lg:pr-8">
                   {/* Description and details */}
                   <div>
                     <h3 className="sr-only">Delivery & Returns</h3>
