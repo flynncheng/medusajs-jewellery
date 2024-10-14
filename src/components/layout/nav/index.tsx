@@ -1,5 +1,3 @@
-'use client';
-
 import Account from './Account';
 import Cart from './Cart';
 import Logo from './Logo';
