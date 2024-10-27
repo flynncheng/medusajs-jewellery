@@ -42,7 +42,7 @@ export default function MenuMobile({ data }: { data: CategoryData }) {
                     {
                       el.category_children.map(child => (
                         <SheetClose asChild key={el.id}>
-                          <Link href={`/collections/${child.handle}`} className="block pb-4">
+                          <Link href={`/categories/${child.handle}`} className="block pb-4">
                             {child.name}
                           </Link>
                         </SheetClose>
@@ -56,7 +56,7 @@ export default function MenuMobile({ data }: { data: CategoryData }) {
               category && category.map(el => (
                 <div className="border-b font-medium transition-all hover:underline" key={el.id}>
                   <SheetClose asChild>
-                    <Link href={`/collections/${el.handle}`} className="block py-4">
+                    <Link href={`/categories/${el.handle}`} className="block py-4">
                       {el.name}
                     </Link>
                   </SheetClose>

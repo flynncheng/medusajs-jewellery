@@ -99,9 +99,11 @@ export default function FeaturedCollections() {
               <a key={product.id} href={product.href} className="group">
                 <div className="w-full overflow-hidden bg-gray-200">
                   <AspectRatio ratio={4 / 5}>
-                    <img
-                      alt={product.imageAlt}
+                    <Image
                       src={product.imageSrc}
+                      alt={product.imageAlt}
+                      width={400}
+                      height={500}
                       className="size-full object-cover object-center group-hover:opacity-75"
                     />
                   </AspectRatio>
@@ -139,9 +141,11 @@ export default function FeaturedCollections() {
               <a key={product.id} href={product.href} className="group">
                 <div className="w-full overflow-hidden bg-gray-200">
                   <AspectRatio ratio={4 / 5}>
-                    <img
-                      alt={product.imageAlt}
+                    <Image
                       src={product.imageSrc}
+                      alt={product.imageAlt}
+                      width={400}
+                      height={500}
                       className="size-full object-cover object-center group-hover:opacity-75"
                     />
                   </AspectRatio>

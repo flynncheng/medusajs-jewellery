@@ -60,7 +60,7 @@ export default function MenuDesktop({ data }: { data: CategoryData }) {
                         <ListItem
                           key={child.name}
                           title={child.name}
-                          href={`/collections/${child.handle}`}
+                          href={`/categories/${child.handle}`}
                         >
                           {child.description}
                         </ListItem>
@@ -73,7 +73,7 @@ export default function MenuDesktop({ data }: { data: CategoryData }) {
           }
           {
             category && category.map(el => (
-              <Link href={`/collections/${el.handle}`} legacyBehavior passHref key={el.id}>
+              <Link href={`/categories/${el.handle}`} legacyBehavior passHref key={el.id}>
                 <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                   {el.name}
                 </NavigationMenuLink>

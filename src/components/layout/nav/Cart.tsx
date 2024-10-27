@@ -1,4 +1,5 @@
 import { ShoppingBag } from 'lucide-react';
+import Image from 'next/image';
 import React from 'react';
 
 import { Button } from '@/components/ui/button';
@@ -155,9 +156,11 @@ export default function Cart() {
                   {products.map(product => (
                     <li key={product.id} className="flex py-6">
                       <div className="size-24 shrink-0 overflow-hidden rounded-md border border-gray-200">
-                        <img
+                        <Image
                           alt={product.imageAlt}
                           src={product.imageSrc}
+                          width={500}
+                          height={500}
                           className="size-full object-cover object-center"
                         />
                       </div>
