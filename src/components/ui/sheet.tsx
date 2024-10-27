@@ -49,7 +49,7 @@ const sheetVariants = cva(
   },
 );
 
-type SheetContentProps = { } & React.ComponentPropsWithoutRef<typeof SheetPrimitive.Content> & VariantProps<typeof sheetVariants>;
+type SheetContentProps = {} & React.ComponentPropsWithoutRef<typeof SheetPrimitive.Content> & VariantProps<typeof sheetVariants>;
 
 const SheetContent = React.forwardRef<
   React.ElementRef<typeof SheetPrimitive.Content>,
@@ -62,11 +62,11 @@ const SheetContent = React.forwardRef<
       className={cn(sheetVariants({ side }), className)}
       {...props}
     >
-      {children}
       <SheetPrimitive.Close className="absolute right-6 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-secondary">
         <X className="size-4" />
         <span className="sr-only">Close</span>
       </SheetPrimitive.Close>
+      {children}
     </SheetPrimitive.Content>
   </SheetPortal>
 ));

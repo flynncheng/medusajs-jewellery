@@ -46,9 +46,7 @@ export function getProductPrice({
       .filter((v: any) => !!v.calculated_price)
       .sort((a: any, b: any) => {
         return (
-          a.calculated_price.calculated_amount
-          - b.calculated_price.calculated_amount
-        );
+          a.calculated_price.calculated_amount - b.calculated_price.calculated_amount);
       })[0];
 
     return getPricesForVariant(cheapestVariant);
