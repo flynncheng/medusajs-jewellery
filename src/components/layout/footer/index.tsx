@@ -7,8 +7,8 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
+
+import InputForm from './InputForm';
 
 export default function Footer() {
   const footerNavs = [
@@ -96,18 +96,8 @@ export default function Footer() {
 
   return (
     <footer className="mt-16 border-t border-gray-100 lg:mt-28">
-      <div className="mx-auto space-y-10 p-6 sm:space-y-16 lg:p-8 xl:px-[8vw]">
-        <form className="">
-          <div className="mx-auto grid w-full max-w-lg items-center gap-1.5">
-            <h3>
-              Be the first to know our exclusive sales events
-            </h3>
-            <div className="flex w-full items-center space-x-2">
-              <Input type="email" placeholder="Email" />
-              <Button type="submit">Subscribe</Button>
-            </div>
-          </div>
-        </form>
+      <div className="mx-auto max-w-7xl space-y-10 p-6 sm:space-y-16 lg:max-w-screen-2xl lg:p-8">
+        <InputForm />
 
         <Accordion type="single" collapsible className="w-full text-sm text-gray-700 sm:hidden">
           <AccordionItem value="item-1">
@@ -137,7 +127,7 @@ export default function Footer() {
           </AccordionItem>
         </Accordion>
 
-        <div className="hidden flex-1 justify-between space-y-6 text-sm text-gray-700 sm:flex sm:space-y-0">
+        <div className="hidden max-w-7xl flex-1 justify-between space-y-6 text-sm text-gray-700 sm:flex sm:space-y-0 lg:max-w-screen-2xl">
           {
             footerNavs.map((item, idx) => (
               <ul
