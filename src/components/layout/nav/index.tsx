@@ -1,7 +1,7 @@
 import Account from './Account';
-import Cart from './Cart';
+import Cart from './cart';
 import Logo from './Logo';
-import Menu from './Menu';
+import Menu from './menu';
 import Search from './Search';
 
 export default function Nav() {

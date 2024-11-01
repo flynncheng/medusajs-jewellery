@@ -1,5 +1,3 @@
-'use client';
-
 import { Menu as MenuIcon } from 'lucide-react';
 import Link from 'next/link';
 import React from 'react';

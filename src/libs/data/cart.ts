@@ -69,6 +69,14 @@ export async function addToCart({
     throw new Error('Error retrieving or creating cart');
   }
 
+  await sdk.store.cart.update(
+    cart.id,
+    { metadata: { variant_id_added: variantId } },
+    {},
+    getAuthHeaders(),
+  );
+  revalidateTag('cart');
+
   await sdk.store.cart
     .createLineItem(
       cart.id,
@@ -79,6 +87,49 @@ export async function addToCart({
       {},
       getAuthHeaders(),
     )
+    .then(() => {
+      revalidateTag('cart');
+    })
+    .catch(medusaError);
+}
+
+export async function deleteLineItem(lineId: string) {
+  if (!lineId) {
+    throw new Error('Missing lineItem ID when deleting line item');
+  }
+
+  const cartId = getCartId();
+  if (!cartId) {
+    throw new Error('Missing cart ID when deleting line item');
+  }
+
+  await sdk.store.cart
+    .deleteLineItem(cartId, lineId, getAuthHeaders())
+    .then(() => {
+      revalidateTag('cart');
+    })
+    .catch(medusaError);
+  revalidateTag('cart');
+}
+
+export async function updateLineItem({
+  lineId,
+  quantity,
+}: {
+  lineId: string;
+  quantity: number;
+}) {
+  if (!lineId) {
+    throw new Error('Missing lineItem ID when updating line item');
+  }
+
+  const cartId = getCartId();
+  if (!cartId) {
+    throw new Error('Missing cart ID when updating line item');
+  }
+
+  await sdk.store.cart
+    .updateLineItem(cartId, lineId, { quantity }, {}, getAuthHeaders())
     .then(() => {
       revalidateTag('cart');
     })
