@@ -5,7 +5,7 @@ import {
   Accordion,
   AccordionContent,
   AccordionItem,
-  AccordionTrigger,
+  AccordionTriggerPlus,
 } from '@/components/ui/accordion';
 
 import InputForm from './InputForm';
@@ -101,26 +101,26 @@ export default function Footer() {
 
         <Accordion type="single" collapsible className="w-full text-sm text-gray-700 sm:hidden">
           <AccordionItem value="item-1">
-            <AccordionTrigger className="font-normal">Resources</AccordionTrigger>
+            <AccordionTriggerPlus className="font-normal">Resources</AccordionTriggerPlus>
             <AccordionContent>
               Yes. It adheres to the WAI-ARIA design pattern.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-2">
-            <AccordionTrigger className="font-normal">About</AccordionTrigger>
+            <AccordionTriggerPlus className="font-normal">About</AccordionTriggerPlus>
             <AccordionContent>
               Yes. It comes with default styles that matches the other
               components&apos; aesthetic.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-3">
-            <AccordionTrigger className="font-normal">Explore</AccordionTrigger>
+            <AccordionTriggerPlus className="font-normal">Explore</AccordionTriggerPlus>
             <AccordionContent>
               Yes. It's animated by default, but you can disable it if you prefer.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-4">
-            <AccordionTrigger className="font-normal">Company</AccordionTrigger>
+            <AccordionTriggerPlus className="font-normal">Company</AccordionTriggerPlus>
             <AccordionContent>
               Yes. It's animated by default, but you can disable it if you prefer.
             </AccordionContent>
