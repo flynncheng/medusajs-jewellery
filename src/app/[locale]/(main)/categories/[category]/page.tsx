@@ -1,20 +1,59 @@
+import type { StoreProductCategory, StoreRegion } from '@medusajs/types';
 import { startCase } from 'lodash';
+import type { Metadata } from 'next';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 
 import Filters from '@/components/cagetories/Filters';
 import PaginatedProducts from '@/components/cagetories/PaginatedProducts';
-import { getCategoryByHandle } from '@/libs/data/categories';
-import type { Category } from '@/types/medusa';
+import { getCategoryByHandle, listCategories } from '@/libs/data/categories';
+import { listRegions } from '@/libs/data/regions';
 
-export async function generateMetadata({ params }) {
+type SortOptions = 'price_asc' | 'price_desc' | 'created_at';
+
+type Props = {
+  params: { category: string[]; countryCode: string };
+  searchParams: {
+    sortBy?: SortOptions;
+    page?: string;
+  };
+};
+
+export async function generateStaticParams() {
+  const product_categories = await listCategories();
+
+  if (!product_categories) {
+    return [];
+  }
+
+  const countryCodes = await listRegions().then((regions: StoreRegion[]) =>
+    regions?.map(r => r.countries?.map(c => c.iso_2)).flat(),
+  );
+
+  const categoryHandles = product_categories.map(
+    (category: any) => category.handle,
+  );
+
+  const staticParams = countryCodes
+    ?.map((countryCode: string | undefined) =>
+      categoryHandles.map((handle: any) => ({
+        locale: countryCode,
+        category: handle,
+      })),
+    )
+    .flat();
+
+  return staticParams;
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { category: categoryParam } = params;
+
   try {
-    const { product_categories } = await getCategoryByHandle(
-      params.category,
-    );
+    const { product_categories } = await getCategoryByHandle(categoryParam);
 
     const title = product_categories
-      .map((category: Category) => category.name)
+      .map((category: StoreProductCategory) => category.name)
       .join(' | ');
 
     const description
@@ -25,7 +64,7 @@ export async function generateMetadata({ params }) {
       title: `${title} | Oneosoft`,
       description,
       alternates: {
-        canonical: params.category,
+        canonical: categoryParam,
       },
     };
   } catch (error) {
@@ -33,30 +72,28 @@ export async function generateMetadata({ params }) {
   }
 }
 
-export default async function Category({ params }) {
-  const { product_categories } = await getCategoryByHandle(
-    params.category,
-  );
+export default async function Category({ params, searchParams }) {
+  const { sortBy: sortByParam, page: pageParam } = searchParams;
+  const { locale: localeParam, category: categoryParam } = params;
+
+  const { product_categories } = await getCategoryByHandle(categoryParam);
 
   if (!product_categories) {
     notFound();
   }
 
+  const sortBy = sortByParam || 'created_at';
+  const page = pageParam ? Number.parseInt(pageParam) : 1;
   const category = product_categories[product_categories.length - 1];
-
-  const pageNumber = 1;
-
-  const sortBy = null;
-  const sort = sortBy || 'created_at';
 
   return (
     <main>
-      <section className="sticky top-24 z-40 bg-white shadow-sm lg:top-16">
+      <section className="sticky top-14 z-40 bg-white shadow-sm lg:top-16">
         <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:max-w-screen-2xl lg:px-8">
           <h1 className="text-sm">
-            {startCase(params.category)}
+            {startCase(categoryParam)}
           </h1>
-          <Filters />
+          <Filters option="sortBy" />
         </div>
       </section>
       <section className="relative overflow-hidden lg:max-h-[80vh]">
@@ -75,15 +112,15 @@ export default async function Category({ params }) {
           />
         </picture>
         <div className="p-6 pb-0 lg:absolute lg:bottom-12 lg:max-w-3xl lg:p-12 lg:pb-0 lg:text-white xl:px-[8vw]">
-          <h2 className="mb-6 mt-3 text-3xl tracking-tight">{startCase(params.category)}</h2>
+          <h2 className="mb-6 mt-3 text-3xl tracking-tight">{startCase(categoryParam)}</h2>
           <p className="text-sm leading-6 lg:tracking-wider">
-            {category.description}
+            {category?.description}
           </p>
         </div>
       </section>
       <section className="space-y-6 lg:space-y-12">
-        <div className="relative z-10 mx-auto bg-white p-6 pb-0 lg:p-12 lg:pb-0 xl:px-[8vw]">
-          <PaginatedProducts sortBy={sort} page={pageNumber} categoryId={category.id} countryCode={params.locale} />
+        <div className="mx-auto bg-white p-6 pb-0 lg:p-12 lg:pb-0 xl:px-[8vw]">
+          <PaginatedProducts sortBy={sortBy} page={page} categoryId={category?.id} countryCode={localeParam} />
         </div>
       </section>
     </main>

@@ -14,7 +14,7 @@ type PaginatedProductsParams = {
   order?: string;
 };
 
-export default async function PaginatedProducts({ sortBy, page = 1, categoryId, countryCode }) {
+export default async function PaginatedProducts({ sortBy, page, categoryId, countryCode }) {
   const queryParams: PaginatedProductsParams = {
     limit: 12,
   };
