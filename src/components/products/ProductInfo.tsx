@@ -19,7 +19,7 @@ export default function ProductInfo({ product }) {
 
   return (
     <div className="lg:w-1/2">
-      <div className="sticky top-24 z-40 mx-auto flex flex-col justify-center px-6 pt-10 lg:min-h-screen lg:max-w-md lg:pb-[24vh]">
+      <div className="sticky top-14 z-40 mx-auto flex flex-col justify-center px-6 pt-10 lg:min-h-screen lg:max-w-md lg:pb-[24vh]">
         <h1 className="text-xl font-medium tracking-tight sm:text-2xl lg:pr-8">{product.title}</h1>
 
         {/* Options */}

@@ -31,7 +31,7 @@ export default function SearchForm() {
   function onSubmit(_data: z.infer<typeof FormSchema>) { }
 
   return (
-    <div className="w-full lg:ml-auto lg:w-1/3">
+    <div className="mt-1 w-full lg:ml-auto lg:w-1/3">
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="">
           <div className="relative flex items-center">

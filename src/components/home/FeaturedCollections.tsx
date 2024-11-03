@@ -79,7 +79,7 @@ export default function FeaturedCollections() {
           <h2 className="mb-6 mt-3 text-3xl tracking-tight">Iconic Handbags: The Side Trunk</h2>
           <span className="underline underline-offset-4">Explore the Selection</span>
         </a>
-        <picture className="sticky top-24 block max-h-[85vh] overflow-hidden lg:top-16">
+        <picture className="sticky top-14 z-[-1] block max-h-[85vh] overflow-hidden lg:top-16">
           <source
             srcSet="/assets/images/one-large.avif"
             media="(min-width: 1024px)"
@@ -93,7 +93,7 @@ export default function FeaturedCollections() {
             priority
           />
         </picture>
-        <div className="relative z-10 mx-auto bg-white p-6 pb-0 lg:p-12 lg:pb-0 xl:px-[8vw]">
+        <div className="mx-auto bg-white p-6 pb-0 lg:p-12 lg:pb-0 xl:px-[8vw]">
           <div className="grid grid-cols-2 gap-x-4 gap-y-6 lg:grid-cols-4">
             {products.map(product => (
               <a key={product.id} href={product.href} className="group">
@@ -121,7 +121,7 @@ export default function FeaturedCollections() {
           <h2 className="mb-6 mt-3 text-3xl tracking-tight">New this Season</h2>
           <span className="underline underline-offset-4">Shop the Selection</span>
         </a>
-        <picture className="sticky top-24 block max-h-[85vh] overflow-hidden lg:top-16">
+        <picture className="sticky top-14 z-[-1] block max-h-[85vh] overflow-hidden lg:top-16">
           <source
             srcSet="/assets/images/two-large.avif"
             media="(min-width: 1024px)"
@@ -135,7 +135,7 @@ export default function FeaturedCollections() {
             priority
           />
         </picture>
-        <div className="relative z-10 mx-auto bg-white p-6 pb-0 lg:p-12 lg:pb-0 xl:px-[8vw]">
+        <div className="mx-auto bg-white p-6 pb-0 lg:p-12 lg:pb-0 xl:px-[8vw]">
           <div className="grid grid-cols-2 gap-x-4 gap-y-6 lg:grid-cols-4">
             {products.map(product => (
               <a key={product.id} href={product.href} className="group">
