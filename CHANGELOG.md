@@ -1,3 +1,29 @@
+# 1.0.0 (2024-11-21)
+
+
+### Features
+
+* add cart ([d4a57bf](https://github.com/flynncheng/medusajs-jewellery/commit/d4a57bfe8096eea5cdf3c3f51119472e4b58a427))
+* add checkout ([4ec690a](https://github.com/flynncheng/medusajs-jewellery/commit/4ec690a1d23088713c7d6962f786cd7c78bef067))
+* add collection page ([565ade3](https://github.com/flynncheng/medusajs-jewellery/commit/565ade3f74b203470168378c834b5ca6cba2661c))
+* add featured collections ([5f4b832](https://github.com/flynncheng/medusajs-jewellery/commit/5f4b8322db5c0818eb3320fbaef1d43c252062dc))
+* add footer ([f1a6a08](https://github.com/flynncheng/medusajs-jewellery/commit/f1a6a0880cbb34f88fccd51693c36663bea21ba3))
+* add hero section ([8e55f28](https://github.com/flynncheng/medusajs-jewellery/commit/8e55f28778cbbcca0fc75cbdfdeb487f84c89761))
+* add main collections ([59cbaee](https://github.com/flynncheng/medusajs-jewellery/commit/59cbaee48b6c33820e1e022a9321010afb73bc9e))
+* add navigation ([6b061d8](https://github.com/flynncheng/medusajs-jewellery/commit/6b061d8f0f93890e3d5237ae423db63116ccb1f1))
+* add product page ([5a34856](https://github.com/flynncheng/medusajs-jewellery/commit/5a348569c2a55b24f8feca2a6c43387c963f7279))
+* add product page ([26232c8](https://github.com/flynncheng/medusajs-jewellery/commit/26232c8a305fe7ee2bbefa54f7e61f0581ae55fe))
+* add shadcn/ui ([ec34a27](https://github.com/flynncheng/medusajs-jewellery/commit/ec34a274921ad18723751750df55f709b27c860b))
+* add tmux script ([b397c2c](https://github.com/flynncheng/medusajs-jewellery/commit/b397c2cdddb19cceb8758be5b39fa8e20b2087ad))
+* **categories:** add filter and product list ([13d18ad](https://github.com/flynncheng/medusajs-jewellery/commit/13d18ad224886ffa048acec6193c804e518353a6))
+* **category:** add filter ([8bedc84](https://github.com/flynncheng/medusajs-jewellery/commit/8bedc84c6a5d07a3a6125ee5c396428cec89ce60))
+* **footer:** add plus trigger icon for accordion ([6b1dc85](https://github.com/flynncheng/medusajs-jewellery/commit/6b1dc85f2bcc8b547b11b580aa64bc60bd9306f2))
+* **footer:** add subscribe form ([3f5f141](https://github.com/flynncheng/medusajs-jewellery/commit/3f5f14142fe77c6aa238ff8489ce0083834c2f19))
+* **home:** add layout ([37ca66b](https://github.com/flynncheng/medusajs-jewellery/commit/37ca66b0770a8de88f9225f2a6ff0ced8463d4b2))
+* **menu:** fetch categories data from backend API ([7b5ac2c](https://github.com/flynncheng/medusajs-jewellery/commit/7b5ac2c9611a7323499c39e4fdff07a2366ec892))
+* **nav:** add cart ([1e7cc26](https://github.com/flynncheng/medusajs-jewellery/commit/1e7cc2633a9e8aef493118c73718c935d55b3e51))
+* **nav:** disable search component ([e700be0](https://github.com/flynncheng/medusajs-jewellery/commit/e700be0afb322a07b36ea1e01bc501eeb9c1aa1c))
+
 ## [3.55.3](https://github.com/ixartz/Next-js-Boilerplate/compare/v3.55.2...v3.55.3) (2024-08-21)
 
 
