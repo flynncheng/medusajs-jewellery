@@ -89,7 +89,7 @@ export default async function Category({ params, searchParams }) {
   return (
     <main>
       <section className="sticky top-14 z-40 bg-white shadow-sm lg:top-16">
-        <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:max-w-screen-2xl lg:px-8">
+        <div className="mx-auto flex h-16 max-w-7xl items-center justify-between pl-6 pr-4 sm:px-6 lg:max-w-screen-2xl lg:px-8">
           <h1 className="text-sm">
             {startCase(categoryParam)}
           </h1>

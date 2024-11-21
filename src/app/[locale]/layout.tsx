@@ -1,6 +1,6 @@
 import '@/styles/global.css';
 
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { Josefin_Sans } from 'next/font/google';
 import { NextIntlClientProvider, useMessages } from 'next-intl';
 import { unstable_setRequestLocale } from 'next-intl/server';
@@ -34,6 +34,15 @@ export const metadata: Metadata = {
       url: '/favicon.ico',
     },
   ],
+};
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+  // Also supported by less commonly used
+  // interactiveWidget: 'resizes-visual',
 };
 
 export function generateStaticParams() {

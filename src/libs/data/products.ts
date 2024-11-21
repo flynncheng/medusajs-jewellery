@@ -115,3 +115,22 @@ export const getProductByHandle = cache(async (
     )
     .then(({ products }) => products[0]);
 });
+
+export const getProductsById = cache(async ({
+  ids,
+  regionId,
+}: {
+  ids: string[];
+  regionId: string;
+}) => {
+  return sdk.store.product
+    .list(
+      {
+        id: ids,
+        region_id: regionId,
+        fields: '*variants.calculated_price,+variants.inventory_quantity',
+      },
+      { next: { tags: ['products'] } },
+    )
+    .then(({ products }) => products);
+});

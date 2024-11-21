@@ -39,8 +39,7 @@ export const setCartId = (cartId: string) => {
     secure: process.env.NODE_ENV === 'production',
   });
 };
-//
-// export const removeCartId = () => {
-//   cookies().set("_medusa_cart_id", "", { maxAge: -1 })
-// }
-//
+
+export const removeCartId = () => {
+  cookies().set('_medusa_cart_id', '', { maxAge: -1 });
+};

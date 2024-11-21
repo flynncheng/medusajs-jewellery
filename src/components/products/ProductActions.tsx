@@ -128,8 +128,8 @@ export default function ProductActions({ product }) {
           {!selectedVariant || isAdding
             ? <LoaderCircle className="animate-spin" />
             : !inStock || !selectedPrice
-              ? 'Out of stock'
-              : 'Add to cart'}
+                ? 'Out of stock'
+                : 'Add to cart'}
         </Button>
       </form>
       {inStock && selectedPrice && <p className="mt-5 px-2 text-sm text-gray-500">Due to high demand, your product will be shipped in 3 to 4 days.</p>}

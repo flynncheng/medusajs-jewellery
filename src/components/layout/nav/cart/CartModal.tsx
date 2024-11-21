@@ -2,6 +2,7 @@
 
 import { PopoverAnchor, PopoverClose } from '@radix-ui/react-popover';
 import { ShoppingBag, X } from 'lucide-react';
+import { useParams, usePathname } from 'next/navigation';
 import React, { useEffect, useRef, useState } from 'react';
 
 import { Button } from '@/components/ui/button';
@@ -25,8 +26,13 @@ export default function CartSheet({ cart }) {
   const [openSheet, setOpenSheet] = useState(false);
   const [openPopover, setOpenPopover] = useState(false);
 
+  // Check if the current route is the checkout page
+  const locale = useParams().locale as string;
+  const pathname = usePathname();
+  const isCheckoutPage = pathname === `/${locale}/checkout`;
+
   // newly added item
-  const itemAdded = cart?.items.filter(item => item.variant_id === cart.metadata.variant_id_added);
+  const itemAdded = cart?.items.filter(item => item.variant_id === cart?.metadata?.variant_id_added);
 
   const totalItems = cart?.items?.reduce((acc, item) => {
     return acc + item.quantity;
@@ -48,7 +54,7 @@ export default function CartSheet({ cart }) {
     if (itemAdded?.length === 0) {
       setOpenPopover(false);
     }
-  }, [totalItems, itemAdded.length]);
+  }, [totalItems, itemAdded?.length]);
 
   return (
     <div className="relative ml-2 flow-root lg:ml-4">
@@ -85,17 +91,30 @@ export default function CartSheet({ cart }) {
                 </div>
               )
               : (
-                <div className="flex h-full flex-col">
+                <div className="flex max-h-full flex-col">
                   <CartItems cartItems={cart?.items} currency_code={cart?.currency_code} setOpenModal={setOpenSheet} />
-                  <CartSummary cart={cart} />
-                  <div className="mb-6 flex justify-center text-center text-sm text-gray-500">
-                    <p>
-                      or
-                      <SheetClose className="ml-1 font-medium text-gray-700 hover:text-gray-500">
-                        Continue Shopping
-                        <span aria-hidden="true" className="ml-1"> &rarr;</span>
-                      </SheetClose>
-                    </p>
+                  <CartSummary cart={cart} isCheckoutPage={isCheckoutPage} />
+                  <div className="mb-8 flex justify-center text-center text-sm text-gray-500">
+                    {
+                      isCheckoutPage
+                        ? (
+                          <Button className="w-full" asChild>
+                            <SheetClose className="ml-1">
+                              Continue checkout
+                              <span aria-hidden="true" className="ml-1"> &rarr;</span>
+                            </SheetClose>
+                          </Button>
+                        )
+                        : (
+                          <p>
+                            or
+                            <SheetClose className="ml-1 font-medium text-gray-700 hover:text-gray-500">
+                              Continue shopping
+                              <span aria-hidden="true" className="ml-1"> &rarr;</span>
+                            </SheetClose>
+                          </p>
+                        )
+                    }
                   </div>
                 </div>
               )

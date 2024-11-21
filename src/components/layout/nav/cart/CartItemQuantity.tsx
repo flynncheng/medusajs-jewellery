@@ -56,8 +56,11 @@ export default function CartItemQuantity({ cartItem }) {
         <SelectGroup>
           <SelectLabel>Quantity</SelectLabel>
           {
-            options.map(quantity =>
-              <SelectItem key={quantity} value={quantity.toString()}>{quantity}</SelectItem>,
+            options.map(quantity => (
+              <SelectItem key={quantity} value={quantity.toString()}>
+                {quantity}
+              </SelectItem>
+            ),
             )
           }
         </SelectGroup>
